@@ -2,32 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Train : MonoBehaviour
+public class Train
 {
-    public LinkedList<TrainCar> TrainCars = new LinkedList<TrainCar>();
-     List<Character> CharList = new List<Character>();
+    public List<TrainCar> TrainCars;
+    
 
     public int size = 1;
     public int speed = 0;
-    public int fuel = 100;
 
-    public Train()
+    public Train(int speed,int size)
     {
-
+        this.speed = speed;
+        this.size = size;
     }
 
-    //TRAIN CARS
-    private int AddCar(TrainCar train)
-    {
-        TrainCars.AddLast(train);
- 
 
+    //TRAIN CARS
+    private int AddCar(TrainCar car)
+    {
+        TrainCars.Add(car);
+      
         return GetSize();
     }
     private bool RemoveCar(int index)
     {
         if (GetSize() > 1 && (index > 1 && index < GetSize()-1)) {
-            TrainCars.RemoveLast();
+            TrainCars.RemoveAt(index);
             return true;
         } 
        
@@ -51,20 +51,20 @@ public class Train : MonoBehaviour
         return this.speed;
     }
     //FUEL
-    private void SetFuel(int fuel)
+    /*private void SetFuel(int fuel)
     {
         this.fuel = fuel;
     }
     public int GetFuel()
     {
         return this.fuel;
-    }
+    }*/
 
 
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame

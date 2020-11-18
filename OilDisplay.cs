@@ -4,15 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 public class OilDisplay : MonoBehaviour
 {
-    int fuel = 0;
-    public Text FuelText;
-
+    public Text fuelText;
+  
     void Update()
     {
-        FuelText.text = "FUEL: " + fuel;
-
-
+        fuelText.text = "FUEL: " + GameMaster.GM.fuel;   
     }
-
-
 }

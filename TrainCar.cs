@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class TrainCar : MonoBehaviour
 {   
-    
+    public TrainCar()
+    {
+
+    }
 
 
     // Start is called before the first frame update
